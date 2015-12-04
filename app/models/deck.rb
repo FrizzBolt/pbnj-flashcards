@@ -5,18 +5,7 @@ class Deck < ActiveRecord::Base
 
   validates :title, presence: true
 
-  def round_deck
-    round_deck=self.cards.dup
+  def shuffle
+
   end
-
-  def shuffle_deck
-    round_deck.each do |flashcard|
-      if flashcard.correct
-        round_deck.delete(flashcard)
-      end
-    end
-    round_deck.shuffle!
-  end
-
-
 end
