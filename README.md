@@ -1,5 +1,8 @@
 # Web Flash Cards 
 
+## Schema
+![schema](schema.png)
+
 ## Summary
 We're going to create a web-based flash card application.  Our application will present users with decks of flash cards.  Users will select a deck and play a round of flash cards.
 
