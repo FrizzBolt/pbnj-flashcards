@@ -11,7 +11,7 @@ class Deck < ActiveRecord::Base
 
   def shuffle_deck
     round_deck.each do |flashcard|
-      unless flashcard.correct
+      if flashcard.correct
         round_deck.delete(flashcard)
       end
     end
