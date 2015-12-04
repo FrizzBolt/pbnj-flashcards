@@ -1,0 +1,27 @@
+<main>
+
+<h2>Edit user profile</h2>	
+
+	<section>
+		<form action="/users/edit" method="post">
+		<input type="hidden" name="_method" value="put">
+
+	    <label for="user_name">User Name:</label>
+	    <input type="text" name="user_name" value="<%= @user.user_name %>">
+
+		  <div class="form">
+		    <label for="email">Email:</label>
+		    <input type="text" name="email" value="<%= @user.email %>">
+		  </div>
+
+		  <div class="form">
+		    <label for="password">Password:</label>
+		    <input type="text" name="password" value="<%= @user.password %>">
+		  </div>
+
+		  <div class="form-submit">
+		    <button type="submit">Submit</button>
+		  </div>
+		</form>
+	</section>
+</main>

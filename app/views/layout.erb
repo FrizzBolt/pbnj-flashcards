@@ -18,6 +18,25 @@
   <title></title>
 </head>
 <body>
+
+<div id="top-bar">
+      <% if current_user %>
+        <span class="logout">
+          <form class="logout" action="/sessions" method="post">
+            <input type="hidden" name="_method" value="delete">
+            <button type="submit"><i class="fa fa-long-arrow-left"></i> Logout</button>
+          </form>
+        </span>
+      <% else %>
+        <span class="login"><a href="/sessions/new"><i class="fa fa-long-arrow-right"></i> Login</a></span>
+      <% end %>
+      
+      <% if current_user %>
+        <span class="profile"><a href="/users/show"><i class="fa fa-user"></i> Profile </a></span>
+      <% else %>
+        <span class="profile"><a href="/users/new"><i class="fa fa-user-plus"></i> Register</a></span>
+      <% end %>
+    </div>
   <%= yield %>
 </body>
 </html>
