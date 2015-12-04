@@ -1,0 +1,16 @@
+<main>
+  <section>
+    <h1>@round.deck.title</h1>
+    <p>@round.deck.cards.first.question</p>
+
+    <form action="/rounds/#{@round.id}" method="post">
+      <input type="text" name="guess">
+      <input type="submit" value="Guess!">
+    </form>
+
+    if @round.guesses != nil
+    <p>@round.guesses.last.message</p>
+    end
+
+  </section>
+</main>
