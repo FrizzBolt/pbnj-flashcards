@@ -1,0 +1,20 @@
+
+<h2>Add A Card</h2>
+
+<% if params[:message] %>
+  <h4><%= params[:message] %></h4>
+<% end %>
+
+<form name="form-create-deck" action=<%="/decks/#{@deck_id}/cards"%> method="post">
+
+  <label for="question">
+  <input type="text" name="question" placeholder="Ex: Disney Princesses">
+
+  <label for="answer">
+  <input type="text" name="answer" placeholder="Ex: Disney Princesses">
+
+  <input type="submit" value="Add this card">
+
+</form>
+
+<a href="/decks">Save and Return</a>
