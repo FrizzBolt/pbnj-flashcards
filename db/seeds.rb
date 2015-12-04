@@ -1,3 +1,11 @@
+require 'faker'
+
+10.times do
+	new_user = User.new(name: Faker::Name.name, email: Faker::Internet.email)
+	new_user.password = Faker::Internet.password(6)
+	new_user.save
+end
+
 
 cards = [
   {question: "How many peanuts does it take to make one 12-ounce jar of peanut butter?", answer: "540", deck_id: 1},
@@ -29,3 +37,4 @@ Deck.create(title: "Spanish-English")
 Deck.create(title: "Disney Trivia")
 Deck.create(title: "Ruby")
 Deck.create(title: "GrabBag")
+
