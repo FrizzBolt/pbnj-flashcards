@@ -1,0 +1,11 @@
+<main role="main">
+  <h1>Decks Available For Play</h1>
+  <ul>
+    <% @decks.each do |deck| %>
+      <li>
+        <a href="/decks/<%= deck.id %>"><%= deck.title %></a>
+      </li>
+    <% end %>
+  </ul>
+</main>
+<footer><a href="/">Home</a></footer>

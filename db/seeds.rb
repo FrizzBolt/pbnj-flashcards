@@ -1,3 +1,4 @@
+
 cards = [
   {question: "How many peanuts does it take to make one 12-ounce jar of peanut butter?", answer: "540", deck_id: 1},
   {question: "How much money (in millions of dollars) do Americans spend per year on peanut butter on average?", answer: "800", deck_id: 1},
@@ -21,3 +22,10 @@ cards = [
 cards.each do |card|
   Card.create(question: card[:question], answer: card[:answer], deck_id: card[:deck_id])
 end
+
+
+Deck.create(title: "PB&J")
+Deck.create(title: "Spanish-English")
+Deck.create(title: "Disney Trivia")
+Deck.create(title: "Ruby")
+Deck.create(title: "GrabBag")
