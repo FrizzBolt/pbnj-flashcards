@@ -21,6 +21,7 @@ get '/decks/:id' do
   erb :'decks/show'
 end
 
+
 post '/decks' do
   new_deck = Deck.new(title: params['title'], user_id: current_user.id)
   new_deck.save
@@ -41,4 +42,9 @@ post '/decks/:id/cards' do
   new_card = Card.create!(question: params['question'], answer: params['answer'], deck_id: params[:id])
   new_card.save
   redirect "/decks/#{params[:id]}/cards/new"
+
+post "/decks/:id/rounds" do
+  deck = Deck.find(params[:id])
+  new_round = Round.create(deck: deck) # Add user later
+  redirect "/rounds/#{new_round.id}"
 end

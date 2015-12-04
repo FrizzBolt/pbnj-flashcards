@@ -3,7 +3,7 @@ class CreateRounds < ActiveRecord::Migration
     create_table :rounds do |t|
       t.references :user
       t.references :deck
-      t.boolean :finished
+      t.integer :card_index, default: 0
       t.timestamps null: false
     end
   end

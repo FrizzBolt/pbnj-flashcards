@@ -1,16 +1,18 @@
 <main>
   <section>
-    <h1>@round.deck.title</h1>
-    <p>@round.deck.cards.first.question</p>
+    <h1><%= @round.deck.title %></h1>
+    <p><%= @round.deck.cards[@round.card_index].question %></p>
 
-    <form action="/rounds/#{@round.id}" method="post">
+    <form action=<%= "/rounds/#{@round.id}" %> method="post">
       <input type="text" name="guess">
       <input type="submit" value="Guess!">
     </form>
 
-    if @round.guesses != nil
-    <p>@round.guesses.last.message</p>
-    end
+    <p><%= @round.cards_left_string %></p>
+
+    <% unless @round.guesses.empty? %>
+    <p><%= @round.guesses.last.message %></p>
+    <% end %>
 
   </section>
 </main>
