@@ -42,6 +42,7 @@ post '/decks/:id/cards' do
   new_card = Card.create!(question: params['question'], answer: params['answer'], deck_id: params[:id])
   new_card.save
   redirect "/decks/#{params[:id]}/cards/new"
+end
 
 post "/decks/:id/rounds" do
   deck = Deck.find(params[:id])
