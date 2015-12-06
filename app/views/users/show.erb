@@ -13,24 +13,26 @@
 
 
 <section class="cluster">
-	    	<header class="cluster-header"> 
+	    	<header class="cluster-header">
 	        <h2 class="theme-subhead">Statistics
 	        </h2>
 	      </header>
 					<div class="cluster-description">
-<p> actual stats here...</p>
+<p>
+<%= current_user.rounds.all.each do |round| %>
+</p>
 	      	</div>
 	      </div>
 	    </section>
 
 <section class="cluster">
-	<header class="cluster-header"> 
+	<header class="cluster-header">
     <h2 class="theme-subhead">Edit your profile
     </h2>
   </header>
 		<div class="cluster-description">
-    <div class="click_to"> 
-    	<a href="/users/:id/edit"><b>Edit</b></a>
+    <div class="click_to">
+    	<a href="/users/<%= "#{@user.id}" %>/edit"><b>Edit</b></a>
   	</div>
   </div>
 </section>

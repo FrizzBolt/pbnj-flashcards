@@ -16,10 +16,10 @@ end
 post "/users" do
 	@user = User.new(name: params[:name], email: params[:email], password: params[:password])
 	if @user.save
-		redirect "/users/show"
+		redirect "/users/#{@user.id}"
 	else
 		@message = "Registration unsuccessful, please try again."
-		erb :"users/new" 
+		erb :"users/new"
 	end
 end
 
@@ -38,7 +38,7 @@ post "/sessions" do
     redirect "/users/show"
   else
     @message = "Login unsuccessful, please try again."
-		erb :"users/login" 
+		erb :"users/login"
   end
 end
 
@@ -63,10 +63,12 @@ get "/users/:id/edit" do
   end
 end
 
-put "/users/:id" do
+put "/users" do
 	if current_user
     @user = current_user
-    redirect "/users"
+    @user.assign_attributes(params[:user])
+    @user.save
+    redirect "/users/#{@user.id}"
   else
     erb :"/users/login"
   end
