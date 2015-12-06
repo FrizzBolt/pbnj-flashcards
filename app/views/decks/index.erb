@@ -1,11 +1,24 @@
-<main role="main">
-  <h1>Decks Available For Play</h1>
-  <ul>
-    <% @decks.each do |deck| %>
-      <li>
-        <a href="/decks/<%= deck.id %>"><%= deck.title %></a>
-      </li>
-    <% end %>
-  </ul>
-</main>
-<footer><a href="/">Home</a></footer>
+<h1 class="primary-title">Select a deck to Play</h1>
+  <div class="theme pure-u-1 pure-u-md-3-4">
+
+	  <div class="collections">
+		  <div class="deck">
+			  <ul>
+			    <% @decks.each do |deck| %>
+			      <li>
+			        <a href="/decks/<%= deck.id %>"><%= deck.title %></a>
+			      </li>
+			    <% end %>
+			  </ul>
+		  </div>
+	      <section class="cluster">
+	        <header class="cluster-header"> 
+	        	<h2 class="theme-subhead">Make your own flashcards!</h2></header>
+	            <div class="cluster-description">
+	              <div class="click_to">
+				    <a href="/decks/new">Create a new deck</a>
+				  </div>
+	            </div>
+	      </section>
+	    </div>  
+

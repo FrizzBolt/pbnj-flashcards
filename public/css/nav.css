@@ -1,0 +1,159 @@
+/* =Nav
+-------------------------------------------------------------- */
+#nav-trigger {
+  display: none;
+  text-align: center; 
+}
+#nav-trigger span {
+  background-color: #591B3E;
+  border-radius: 25px;
+  color: #F3D792;
+  display: inline-block;
+  font-size: 16px;
+  padding: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 30%;
+}
+
+  
+#nav-trigger span:after {
+  border-left: solid 10px transparent;
+  border-top: solid 10px #ffeba9 ;
+  border-right: solid 10px transparent; 
+  color: #FFFFFF;
+  content: "";
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#nav-trigger span:hover {
+  /*background-color: #aa3524 ; */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.10)));
+    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.05) 0%, rgba(0,0,0, 0.10));
+    background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
+    color: #FFFFFF;
+}
+
+#nav-trigger span.open:after {
+  border-left: solid 10px transparent;
+  border-top: none;
+  border-bottom: solid 10px #ffeba9;
+  border-right: solid 10px transparent; 
+    /*background-color: #591B3E;*/
+
+}
+
+nav {
+  margin-bottom: 20px; 
+}
+
+nav#nav-main {
+  background-color: #591B3E;
+  color: #F3D792;
+  border-radius: 25px;
+  padding: 5px 0; 
+}
+
+nav#nav-main ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+  text-align: center; 
+}
+
+nav#nav-main li {
+  /*background-color: #591B3E;*/
+  /*border-radius: 25px;*/
+  border-right: dotted 1px #7B4E2B;
+  /*height: 50px;*/
+  display: inline-block;
+  /*margin: 10px;*/
+  /*padding: 0 5px; */
+  width: 20%;
+}
+
+nav#nav-main li:last-child {
+  border-right: none; 
+}
+
+nav#nav-main a {
+  color: #ffeba9;
+  /*display: block;*/
+  padding: 10px; 
+}
+
+nav#nav-main a:hover {
+  /*background-color: #381C35 ;*/
+  /*border-radius: 25px;*/
+  color: #ffffff; 
+}
+
+nav#nav-mobile {
+  display: none; 
+  /*position: relative;*/
+}
+
+nav#nav-mobile ul {
+  border-radius: 25px;
+  display: none;
+  left: 0;
+  list-style-type: none;
+  /*position: absolute;*/
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 30%;
+  max-width: 60%;
+  right: 0;
+  text-align: center;
+}
+
+nav#nav-mobile li {
+  /*background-color: #d3422d; */
+  border-radius: 25px;
+  display: block;
+  margin: 5px;
+  /*padding: 5px 0;*/
+}
+
+nav#nav-mobile li:last-child {
+  border-bottom: none; 
+}
+
+nav#nav-mobile a {
+  background-color: #591B3E; 
+  border-radius: 25px;
+  display: block;
+  margin: 5px;
+  padding: 10px;
+  width: 100%;
+  /*padding: 5px 0;*/
+}
+    
+nav#nav-mobile a:hover {
+  background-color: #381C35 ;
+  /*border-radius: 20px;*/
+  color: #ffffff ; 
+  /*width: 90%;*/
+}
+
+
+/* = Nav Media Queries
+-------------------------------------------------------------- */
+@media all and (max-width: 900px) {
+  #nav-trigger {
+    display: block; 
+  }
+
+  nav#nav-main {
+    display: none; 
+  }
+
+  nav#nav-mobile {
+    display: block; 
+  } 
+}
+

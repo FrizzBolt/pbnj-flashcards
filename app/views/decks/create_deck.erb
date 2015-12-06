@@ -1,10 +1,15 @@
+<h1 class="primary-title">Enter a title for your deck:</h1>
+  <div class="theme pure-u-1 pure-u-md-3-4">
 
-<h2>Enter a title for your deck:</h2>
+	<section>
+		<form action="/decks" method="post"> 
+			<div class="form">
+			  <label for="title">Title:</label>
+			  <input type="text" name="title" placeholder="Ex: Disney Princesses">
+		  </div>
 
-<form name="form-create-deck" action="/decks" method="post">
-
-  <input type="text" name="title" placeholder="Ex: Disney Princesses">
-
-  <button type="submit" value="Submit">
-
-</form>
+		  <div class="form-submit">
+		    <button type="submit">Submit</button>
+		  </div>
+		</form>
+	</section>

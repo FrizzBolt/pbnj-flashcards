@@ -1,18 +1,26 @@
-<main>
-  <section>
-    <h1><%= @round.deck.title %></h1>
-    <p><%= @round.deck.cards[@round.card_index].question %></p>
+<h1 class="primary-title">Play a round</h1>
+  <div class="theme pure-u-1 pure-u-md-3-4">
 
-    <form action=<%= "/rounds/#{@round.id}" %> method="post">
-      <input type="text" name="guess">
-      <input type="submit" value="Guess!">
-    </form>
+    <section class="cluster">
+      <header class="cluster-header"> 
+        <h2 class="theme-subhead"><%= @round.deck.title %>
+        </h2>
+        <h3><span class="emphasis">Question: </span><%= @round.deck.cards[@round.card_index].question %></h3>
+      </header>
 
-    <p><%= @round.cards_left_string %></p>
+      <form action=<%= "/rounds/#{@round.id}" %> method="post">
+        <div class="form">
+          <input type="text" name="guess" placeholder="Type your answer here">
+        </div>
 
-    <% unless @round.guesses.empty? %>
-    <p><%= @round.guesses.last.message %></p>
-    <% end %>
-
-  </section>
-</main>
+        <div class="form-submit">
+          <button type="submit">Guess!</button>
+        </div>
+      </form>
+    </section>
+    <section>
+      <h4><%= @round.guesses.last.message %></h4>
+        <% unless @round.guesses.empty? %>
+      <h4><%= @round.cards_left_string %></h4>
+        <% end %>  
+    </section>
