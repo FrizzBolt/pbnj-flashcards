@@ -18,9 +18,20 @@
 	        </h2>
 	      </header>
 					<div class="cluster-description">
-<p>
-<%= current_user.rounds.all.each do |round| %>
-</p>
+  <table class="stats">
+    <tr>
+      <td>Date Played</td>
+      <td>Deck</td>
+      <td>Number Correct</td>
+    </tr>
+    <% current_user.rounds.all.each do |round| %>
+      <tr>
+        <td><%= round.created_at.strftime("%m/%d/%Y") %></td>
+        <td><%= round.deck.title %></td>
+        <td><%= round.num_correct %> out of <%= round.deck.cards.length %></td>
+      </tr>
+  <% end %>
+  </table>
 	      	</div>
 	      </div>
 	    </section>

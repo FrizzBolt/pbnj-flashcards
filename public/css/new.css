@@ -13,7 +13,7 @@ small, strike, strong, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+ caption, tbody, tfoot, thead, tr, th, td {
   background: transparent;
   border: 0;
   margin: 0;
@@ -67,12 +67,12 @@ h4 a {
 /* links and buttons */
 a {
   text-decoration: none;
-  color: #F3D792; 
+  color: #F3D792;
 }
 
 a:hover,
 a:focus {
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 /* conditionals */
@@ -138,7 +138,7 @@ body {
 .container {
 	color: #ffffff;
   margin: 0 auto;
-  padding: 10px 30px; 
+  padding: 10px 30px;
   width: 90%;
   /*text-align: center;*/
 }
@@ -149,7 +149,7 @@ body {
   content: "";
   clear: both;
   display: block;
-  height: 0; 
+  height: 0;
   visibility: hidden;
 }
 
@@ -169,7 +169,7 @@ body {
 /* =Top Bar with media queries
 -------------------------------------------------------------- */
 #top-bar {
-  background-color: #3C1707; 
+  background-color: #3C1707;
 }
 
 #top-bar a {
@@ -177,12 +177,12 @@ body {
   display: inline-block;
   font-size: 14px;
   margin: 0, 10px;
-  padding: 5px; 
+  padding: 5px;
   text-transform: uppercase;
 }
 
 #top-bar a:hover {
-  color: #ffffff; 
+  color: #ffffff;
 }
 
 /*--- left and right spans of top bar ---*/
@@ -190,7 +190,7 @@ span.login,
 span.logout {
   display: block;
   float: right;
-  text-align: right; 
+  text-align: right;
   /*width: 100%; */
 }
 
@@ -202,13 +202,13 @@ span.profile {
 }
 
 /*#top-bar a {
-  display: block; 
+  display: block;
 }*/
 
 /*top bar media queries*/
 @media all and (max-width: 600px) {
   .container {
-    width: 100%; 
+    width: 100%;
   }
 
 
@@ -299,6 +299,7 @@ background-image: url("/imgs/stripe.jpg");
     margin-left: 1em;
 }
 
+
 /***************** footer *****************/
 
 footer {
@@ -312,5 +313,11 @@ footer {
 footer a:hover,
 footer a:focus {
     color: white;
+}
+
+table {
+  width: 100%;
+  border-style: dotted;
+  border-color: #000000;
 }
 

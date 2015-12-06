@@ -19,6 +19,7 @@ class Round < ActiveRecord::Base
   def answered_correctly_string
     correct = 0
     guesses.each { |guess| correct += 1 if guess.correctness }
+    self.update(num_correct: correct)
     "#{correct} out of #{deck.cards.count}"
   end
 
