@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
+  <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
@@ -28,7 +28,7 @@
   <div class="container clearfix">
 
     <div id="top-bar">
- 
+
 <!-- if logged in, show option to log out -->
 <!-- left -->
 <% if current_user %>
@@ -46,7 +46,7 @@
 <!-- if logged in, show profile link -->
 <!-- right -->
 <% if current_user %>
-  <span class="profile"><a href="/users/:id"><i class="fa fa-user"></i> Profile </a></span>
+  <span class="profile"><a href="/users/<%= "#{session[:current_user_id]}" %>"><i class="fa fa-user"></i> Profile </a></span>
 <% else %>
 
 <!-- if not logged in, show option to register -->
@@ -54,7 +54,7 @@
 <% end %>
   </div>
   </div>
-</div> 
+</div>
 <!-- end top bar -->
 
 <header>

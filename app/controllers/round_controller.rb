@@ -5,6 +5,7 @@ end
 
 post "/rounds/:id" do
   round = Round.find(params[:id])
+  round.user_id = session[:current_user_id]
   guess = params[:guess]
   round.make_guess(guess)
   if(round.finished?)
