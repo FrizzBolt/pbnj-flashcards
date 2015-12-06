@@ -2,7 +2,7 @@
   <div class="theme pure-u-1 pure-u-md-3-4">
 
     <section class="cluster">
-      <header class="cluster-header"> 
+      <header class="cluster-header">
       	<h2 class="theme-subhead">
 					<% if params[:message] %>
 					  <h4><%= params[:message] %></h4>
@@ -12,7 +12,7 @@
     </section>
 
 <section>
-	<form action=<%="/decks/#{@deck_id}/cards"%> method="post"> 
+	<form action=<%="/decks/#{@deck_id}/cards"%> method="post">
 		<div class="form">
 		  <label for="question">Question:</label>
 		  <input type="text" name="question" placeholder="Ex: Disney Princesses">
@@ -28,7 +28,7 @@
 	  </div>
 	</form>
 
-	<form action=<%="/decks"%> method="post">
+	<form action="/decks" method="get">
 		<div class="form-submit">
 	    <button type="submit">Save and Exit Deck Creation</button>
 	  </div>

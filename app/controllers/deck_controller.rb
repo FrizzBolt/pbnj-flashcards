@@ -9,9 +9,11 @@ end
 # post '/decks' do
 # end
 get '/decks/new' do
+  @decks = Deck.all
   if session[:current_user_id]
     erb :'decks/create_deck'
   else
+    params[:message] = "*You cannot add a deck without an account. Please login.*"
     erb :'decks/index'
   end
 end
@@ -23,10 +25,10 @@ end
 
 
 post '/decks' do
-  new_deck = Deck.new(title: params['title'], user_id: current_user.id)
-  new_deck.save
-  get_id = new_deck.id
-  redirect "/decks/#{get_id}/cards/new"
+  @new_deck = Deck.new(title: params['title'], user_id: current_user.id)
+  @new_deck.save
+  get_id = @new_deck.id
+  redirect "/decks/#{@new_deck.id}/cards/new"
 end
 
 get '/decks/:id/cards/new' do
@@ -34,6 +36,7 @@ get '/decks/:id/cards/new' do
     @deck_id = params[:id]
     erb :'decks/create_card'
   else
+    params[:message] = "*You cannot add a card without an account. Please login.*"
     erb :'decks/index'
   end
 end

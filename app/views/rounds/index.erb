@@ -2,7 +2,7 @@
   <div class="theme pure-u-1 pure-u-md-3-4">
 
     <section class="cluster">
-      <header class="cluster-header"> 
+      <header class="cluster-header">
         <h2 class="theme-subhead"><%= @round.deck.title %>
         </h2>
         <h3><span class="emphasis">Question: </span><%= @round.deck.cards[@round.card_index].question %></h3>
@@ -19,8 +19,8 @@
       </form>
     </section>
     <section>
-      <h4><%= @round.guesses.last.message %></h4>
         <% unless @round.guesses.empty? %>
+      <h4><%= @round.guesses.last.message %></h4>
       <h4><%= @round.cards_left_string %></h4>
-        <% end %>  
+        <% end %>
     </section>
