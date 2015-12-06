@@ -1,8 +1,16 @@
-<h1>Do you want to play a round of <%= @deck.title %>?</h1>
+<h1 class="primary-title">Do you want to play a round of <%= @deck.title %>?</h1>
+  <div class="theme pure-u-1 pure-u-md-3-4">
+		
+	<section>
+		<form action=<%= "/decks/#{@deck.id}/rounds" %> method="post">
+			<div class="form-submit">
+		    <button type="submit">Yes</button>
+		  </div>
+		 </form>
 
-<form action=<%= "/decks/#{@deck.id}/rounds" %> method="post">
-  <input type="submit" value="Yes">
-</form>
-<form action="/decks">
-  <input type="submit" value="No">
-</form>
+		<form action="/decks">
+			<div class="form-submit">
+		    <button type="submit">No</button>
+		  </div>
+	  </form>
+	</section>

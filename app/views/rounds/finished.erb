@@ -1,10 +1,14 @@
-<main>
-  <section>
-    <h1><%= @round.deck.title %></h1>
+<h1 class="primary-title"><%= @round.deck.title %></h1>
+  <div class="theme pure-u-1 pure-u-md-3-4">
 
-    <p>Good Job! you got <%= @round.answered_correctly_string%>!</p>
-
-    <a href="/decks">Play more</a>
-
-  </section>
-</main>
+		<section class="cluster">
+      <header class="cluster-header">
+      	<h2 class="theme-subhead">Deck Completeted</h2>
+      	<h3><span class="emphasis">Good Job! </span><%= @round.answered_correctly_string%>!</h3>
+      </header>
+        <div class="cluster-description">
+          <div class="click_to">
+				    <a href="/decks">Play more</a>
+				  </div>
+        </div>
+    </section>

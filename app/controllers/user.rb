@@ -1,5 +1,5 @@
+# enable :sessions
 
-  enable :sessions
 # go to index
 get "/" do
 	erb :"/index"
@@ -26,6 +26,7 @@ end
 # **************** User Login ***************
 #  Render login form
 get "/sessions/new" do
+  @decks = Deck.all
 	erb :"users/login"
 end
 

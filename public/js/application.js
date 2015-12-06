@@ -1,7 +1,15 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  // **************** responsive nav **************** //
+  $("#nav-mobile").html($("#nav-main").html());
+  
+  $("#nav-trigger span").on("click", function(){
+    if ($("nav#nav-mobile ul").hasClass("expanded")) {
+      $("nav#nav-mobile ul.expanded").removeClass("expanded").slideUp();
+      $(this).removeClass("open");
+    } else {
+      $("nav#nav-mobile ul").addClass("expanded").slideDown();
+      $(this).addClass("open");
+    }
+  });
 });
