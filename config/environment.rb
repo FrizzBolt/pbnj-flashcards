@@ -20,6 +20,10 @@ require "sinatra/reloader" if development?
 
 require 'erb'
 require 'bcrypt'
+
+require 'active_record'
+
+ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 # require 'faker'
 
 # Some helper constants for path-centric logic
