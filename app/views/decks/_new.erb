@@ -1,0 +1,16 @@
+
+	<form id="card-form" action=<%="/decks/#{@deck_id}/cards"%> method="post">
+		<div class="form">
+		  <label for="question">Question:</label>
+		  <input type="text" name="question" placeholder="Ex: Disney Princesses">
+	  </div>
+
+	  <div class="form">
+		  <label for="answer">Answer:</label>
+		  <input type="text" name="answer" placeholder="Ex: Disney Princesses">
+	  </div>
+
+	  <div class="new-card-submit">
+	    <button type="submit">Add this card</button>
+	  </div>
+	</form>

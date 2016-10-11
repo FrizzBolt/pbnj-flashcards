@@ -32,6 +32,7 @@ post '/decks' do
 end
 
 get '/decks/:id/cards/new' do
+  @deck = Deck.find(params[:id])
   if session[:current_user_id]
     @deck_id = params[:id]
     erb :'decks/create_card'
@@ -41,10 +42,29 @@ get '/decks/:id/cards/new' do
   end
 end
 
+# if session[:current_user_id]
+#     @deck_id = Deck.find_by(id: params[:id])
+#     @deck_id = params[:id]
+#     @new_deck = Deck.new(title: params['title'], user_id: current_user.id)
+#     if request.xhr?
+#       erb :"_new", layout: false, locals: {deck_id: @deck_id}
+#     else
+#       redirect "/decks/#{@new_deck.id}/cards/new"
+#     end
+
 post '/decks/:id/cards' do
+  # p params
   new_card = Card.create!(question: params['question'], answer: params['answer'], deck_id: params[:id])
+  # p new_card
   new_card.save
-  redirect "/decks/#{params[:id]}/cards/new"
+  if request.xhr?
+    # content_type :json
+    # new_card.to_json
+    erb :"decks/_cardList", locals: {new_card: new_card}, layout: false
+      # erb :"_new", layout: false, locals: {card_id: @card_id}
+    else
+      redirect "/decks/#{params[:id]}/cards/new"
+    end
 end
 
 post "/decks/:id/rounds" do

@@ -12,10 +12,11 @@ get "/users/new" do
 	erb :"users/new"
 end
 
-# Save new user to database or display errors
+# Save new user to database and redirect to index
 post "/users" do
 	@user = User.new(name: params[:name], email: params[:email], password: params[:password])
 	if @user.save
+      session[:current_user_id] = @user.id
 		redirect "/users/#{@user.id}"
 	else
 		@message = "Registration unsuccessful, please try again."

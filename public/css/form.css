@@ -12,6 +12,7 @@
   width: 20%;
 }
 
+.form-title input[type="text"],
 .form input[type="text"],
 .form input[type="password"] {
   color: #381C35;
@@ -28,7 +29,7 @@
   box-sizing: border-box;
 }
 
- .form input[type="textarea"] {
+ .form input[type="textarea"], {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: inset 0 1px 3px #ddd;
@@ -51,10 +52,12 @@ form {
   padding: 2%;
 }
 
+.card-submit,
 .form-submit {
   text-align: center;
 }
 
+.card-submit button,
 .form-submit button {
   background-color: #591B3E;
   border-radius: 5px;
@@ -118,3 +121,13 @@ padding: 0em;
   font-size: 2em;
   line-height: 3; 
 }
+
+
+.show-card {
+  display: none;
+}
+/*.form-title {
+  width: 100%;
+  text-align: left;
+  padding: 2%;
+}*/
